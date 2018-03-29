@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit-Modal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="modal-edit.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Modal Example</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body row">
+                        <div class="col-xs-6">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control type-quality" id="quality" value="PAISLEY JEANS">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-xs-2" for="price">$</label>
+                                    <div class="col-xs-10">
+                                        <input type="text" class="form-control" id="price" value="21.00">
+                                    </div>
+                                </div>
+
+                                <select name="size" class="sizedrp">
+                                    <option>Size</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                                <select name="Qty:1" class="qtyDrp">
+                                    <option value="1">Qty:1</option>
+                                    <option value="2">Qty:2</option>
+                                    <option value="3">Qty:3</option>
+                                    <option value="4">Qty:4</option>
+                                </select>
+
+                                <button class="btn btn-primary btn-margin col-xs-12">EDIT</button>
+
+                                <div><a href="#">See product Details</a></div>
+                            </form>
+                        </div>
+                        <div class="col-xs-6">
+                            <img src="assets/P1.jpg">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

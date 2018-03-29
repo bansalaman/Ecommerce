@@ -1,0 +1,174 @@
+/* For mobile view */
+.container-fluid {
+    border: 2px solid #000000;
+}
+
+.background-line {
+    background-color: #c67359;
+    height: 10px;
+    width: auto;
+}
+
+.image-image-info-container {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.images-container {
+    width: 50%;
+    float: left;
+    height: 300px;
+    padding: auto;
+}
+
+.images-info-container {
+    width: 50%;
+    float:right;
+    margin-top: 0;
+    height: 300px;
+}
+
+.image-size {
+    padding: auto;
+    height: 95%;
+    width: 90%;
+}
+
+.edit-remove-saveforlater {
+    font-size: 20px;
+    color: #808080;
+}
+
+
+.cross-icon-img {
+    height : 10px;
+    width: 10px;
+}
+
+.form-control {
+    height: 25px;
+    border:none;
+}
+
+.type-quality {
+    font-weight: bold;
+}
+
+.style-color-size {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #808080;
+}
+
+.promotion-giftcard{
+    padding-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-totals {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-checkout {
+    border-radius: none;
+    margin-left: 20px;
+    width: 90%;
+    height: 65px;
+}
+
+.continue-shopping {
+    justify-content: center;
+    padding-top: 30px;
+    font-size: 18px;
+    color: #808080;
+    text-decoration: underline;
+}
+
+.secure-checkout {
+    justify-content: center;
+    padding-top: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.signin {
+    font-size: 18px;
+    padding-top: 30px;
+    color: #808080;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.color {
+    margin-bottom: 0;
+}
+
+.modal-content {
+    height: 420px;
+    border: 80px solid  #e2cfba;
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+.button-border {
+    border: none;
+    background-color: transparent;
+}
+
+.sizedrp{
+    width: 40%;
+    height: 50px;
+}
+
+.qtyDrp{
+    width: 40%;
+    height: 50px;
+    margin-left: 16%;
+}
+
+.btn-margin {
+    margin-top: 20px;
+}
+
+.hide1 {
+    display: none;
+}
+
+.first-color-box {
+    border: 1px solid;
+    float: left;
+    width: 50%;
+    background-color: red;
+    height: 10px;
+}
+
+.second-color-box {
+    border: 1px solid;
+    float: right;
+    width:50%;
+    background-color: green;
+    height: 10px;
+}
+@media (min-width: 768px) {
+
+    .images-container {
+        width: 25%;
+        float: left;
+        height: 250px;
+        padding: auto;
+    }
+    
+    .images-info-container {
+        width: 75%;
+        float:right;
+        margin-top: 0;
+        height: 250px;
+    }
+    
+}
+

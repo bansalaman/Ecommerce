@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-commerce Project</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="ecommerce.css">
+</head>
+
+<body>
+    <div class="container-fluid" id="main">
+        <div>
+            <h2>YOUR SHOPPING BAG <span><h5 class="no-of-items"></h5></span></h2>           
+        </div>
+
+        <div class="background-line"></div>
+
+        <div class="image-image-info-container hide" id="item">
+            <div class="images-container">
+                <img class="image-size">
+            </div>
+            <div class="images-info-container">
+                <form class="form-horizontal">
+                    <div class="form-group">
+
+                        <div class="col-xs-12">
+                            <!-- <input type="text" class="form-control type-quality qual" id="type"> -->
+                            <span class=" form-control type-quality type" id="type"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-xs-12">
+                            <!-- <input type="text" class="form-control type-quality" id="quality"> -->
+                            <span class="form-control type-quality qual" id="quality"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group style-color-size">
+                        <label class="control-label col-xs-2" for="style">Style#:</label>
+                        <div class="col-xs-10">
+                            <!-- <input type="text" class="form-control" id="style"> -->
+                            <span class="form-control styles" id="style"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group style-color-size">
+                        <label class="control-label col-xs-2" for="colour">Colour:</label>
+                        <div class="col-xs-10">
+                            <!-- <input type="text" class="form-control" id="colour" value=""> -->
+                            <span class="color form-control" id="colour"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group style-color-size">
+                        <label class="control-label col-xs-2" for="size">Size:</label>
+                        <div class="col-xs-10">
+                            <!-- <input type="text" class="form-control " id="size"> -->
+                            <span class="form-control sizes" id="size"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="quantity">QTY:</label>
+                        <div class="col-xs-10">
+                            <!-- <input type="text" class="form-control" id="quantity"> -->
+                            <span class="form-control quan" id="quantity"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-2" for="price">$</label>
+                        <div class="col-xs-10">
+                            <!-- <input type="text" class="form-control" id="price"> -->
+                            <span class="form-control prices" id="price"></span>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+            <div class="edit-remove-saveforlater row">
+                <button class="button-border col-xs-offset-1 col-xs-3" id="edit" data-toggle="modal">EDIT</button>
+                <button class="button-border col-xs-offset-1 col-xs-3" href="">REMOVE</button>
+                <button class="button-border col-xs-offset-1 col-xs-3" href="">SAVE FOR LATER</button>
+            </div>
+        </div>
+
+        <div class="background-line"></div>
+
+        <form class="form-horizontal">
+            <div class="row">
+                <p class="promotion-giftcard col-xs-offset-4 col-xs-4"> ENTER PROMOTIONAL CODE OR GIFT CARD</p>
+            </div>
+
+            <div class="form-group form-totals">
+                <div class="col-xs-offset-5 col-xs-3">
+                    <input type="text" class="form-control" id="apply">
+                </div>
+                <button class="control-label col-xs-2" for="apply">APPLY</button>
+
+            </div>
+
+            <div class="form-group form-totals">
+                <label class="control-label col-xs-2" for="sub-total">SUBTOTAL:</label>
+                <div class="col-xs-offset-7 col-xs-3">
+                    <!-- <input type="text" class="form-control" id="sub-total" value="$37.00"> -->
+                    <span class="form-control" id="sub-total" ></span>
+                </div>
+            </div>
+
+            <div class="form-group form-totals">
+                <label class="control-label col-xs-4" for="sub-total">ESTIMATED SHIPPING:</label>
+
+                <div class="col-xs-offset-5 col-xs-3">
+                    <input type="text" class="form-control" id="sub-total" value="FREE">
+                </div>
+                <div class="col-xs-6">You spent 50$ so you are eligible for free shipping</div>
+            </div>
+
+            <div class="form-group form-totals">
+                <label class="control-label col-xs-4" for="sub-total">PROMOTION CODE:</label>
+                <div class="col-xs-offset-5 col-xs-3">
+                    <input type="text" class="form-control" value="00.00">
+                </div>
+                <div class="col-xs-6 col-xs-offset-0">JF10 APPLIED</div>
+            </div>
+
+            <div class="form-group form-totals">
+                <label class="control-label col-xs-4" for="sub-total">ESTIMATED TOTAL:</label>
+                <div class="col-xs-offset-5 col-xs-3">
+                    <!-- <input type="text" class="form-control" value="$30.00"> -->
+                    <span class="form-control est-total"></span>
+                </div>
+                <div class="col-xs-6 col-xs-offset-0">Tax will be applied during checkout</div>
+            </div>
+
+            <button class="btn btn-primary btn-checkout col-xs-12">CHECKOUT</button>
+
+            <div class = "row">
+                <a class="col-xs-6 col-xs-offset-3 continue-shopping" href="">CONTINUE SHOPPING</a>
+                <p class="col-xs-6 col-xs-offset-3 secure-checkout">Secure checkout. Shopping is always safe and secure</p>
+                <img class="col-xs-2 col-xs-offset-5" src="assets/lock.jpg">
+            </div>
+
+            
+            <p  class="form-totals signin"><a>SIGN IN</a> to save your cart and have access to your items on mobiles, tablets and desktop.</p>
+
+        </form>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="editModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body row">
+                    <div class="col-xs-6">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <!-- <input type="text" class="form-control type-quality" id="quality" value="PAISLEY JEANS"> -->
+                                    <span class="form-control type-quality modal-qual" id="quality"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-2" for="price">$</label>
+                                <div class="col-xs-10">
+                                    <!-- <input type="text" class="form-control" id="price" value="21.00"> -->
+                                    <span class="form-control modal-price" id="price"></span>
+                                </div>
+                            </div>
+
+                            <div class="first-color-box"></div>
+                            <div class="second-color-box"></div>
+
+                            <select name="size" class="sizedrp">
+                                <option>Size</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                            </select>
+                            <select name="Qty:1" class="qtyDrp">
+                                <option value="1">Qty:1</option>
+                                <option value="2">Qty:2</option>
+                                <option value="3">Qty:3</option>
+                                <option value="4">Qty:4</option>
+                            </select>
+
+                            <button class="btn btn-primary btn-margin col-xs-12 edit-modal-btn">EDIT</button>
+
+                            <div><a href="#">See product Details</a></div>
+                        </form>
+                    </div>
+                    <div class="col-xs-6">
+                        <img class="modal-image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAm5mLhPQcZTQE1iQw4XK7XXlYFNRjg62U",
+    authDomain: "ecommerce-5c641.firebaseapp.com",
+    databaseURL: "https://ecommerce-5c641.firebaseio.com",
+    projectId: "ecommerce-5c641",
+    storageBucket: "ecommerce-5c641.appspot.com",
+    messagingSenderId: "1060370457615"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="ecommerce.js"></script>  
+</body>
+
+</html>

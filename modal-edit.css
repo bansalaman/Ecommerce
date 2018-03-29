@@ -1,0 +1,22 @@
+.modal-content {
+    height: 420px;
+    border: 80px solid #e2cfba;
+    width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+.sizedrp{
+    width: 40%;
+    height: 50px;
+}
+
+.qtyDrp{
+    width: 40%;
+    height: 50px;
+    margin-left: 16%;
+}
+
+.btn-margin {
+    margin-top: 20px;
+}
