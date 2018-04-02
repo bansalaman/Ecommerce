@@ -10,11 +10,10 @@ ecom.price;
 ecom.promo = 0;
 ecom.database = firebase.database().ref('productsInCart');
 (function (ecom) {
-    ecom.ecomlist = function (snapshot) {
+    ecom.ecomlist = function () {
         ecom.database.on('value', function (snapshot) {
             ecom.datalen = Object.keys(snapshot.val());
-            //console.log(datalen.length);
-            $('.no-of-items').html(ecom.datalen.length + ' ' + "ITEMS");
+            
             for (let i = 0; i < ecom.datalen.length; i++) {
                 let $itemList = $('#item').clone();
                 $('.background-line').before($itemList);
@@ -29,7 +28,7 @@ ecom.database = firebase.database().ref('productsInCart');
                 $itemList.find('.prices').html(snapshot.val()[i].p_price * snapshot.val()[i].p_quantity);
                 ecom.price = snapshot.val()[i].p_price * snapshot.val()[i].p_quantity;
                 ecom.subTotal = ecom.subTotal + ecom.price;
-                ecom.totalQuantity = ecom.totalQuantity +  parseInt(snapshot.val()[i].p_quantity);
+                ecom.totalQuantity = ecom.totalQuantity + parseInt(snapshot.val()[i].p_quantity);
                 $itemList.find('#edit').on('click', function (e) {
                     e.preventDefault();
                     $('.modal-image').attr('src', snapshot.val()[i].p_image);
@@ -56,13 +55,13 @@ ecom.database = firebase.database().ref('productsInCart');
                     $modal.modal('show');
                     ecom.t = i;
                 })
-                
-                $('.edit-modal-btn').on('click',function(e){
-                    if(ecom.t === i){
+
+                $('.edit-modal-btn').on('click', function (e) {
+                    if (ecom.t === i) {
                         firebase.database().ref('productsInCart/' + i).update({
-                            p_quantity:  $('.qtyDrp option:selected').val(),
+                            p_quantity: $('.qtyDrp option:selected').val(),
                         });
-                        if($('.sizedrp option:selected').val() === 'Size'){
+                        if ($('.sizedrp option:selected').val() === 'Size') {
                             alert('Please enter a valid size')
                             return false;
                         }
@@ -70,33 +69,37 @@ ecom.database = firebase.database().ref('productsInCart');
                             name: $('input[type=radio]:checked').val(),
                         });
                         firebase.database().ref('productsInCart/' + i + '/p_selected_size/').update({
-                            code:  $('.sizedrp option:selected').val(),
+                            code: $('.sizedrp option:selected').val(),
                         });
-                        $('editModal').find('.modal-color-options').html('');
+                        //$('#editModal').find('.color-box').html('');
                     }
                 })
-                               
+
             }
-            $('#sub-total').html('$' +' ' + ecom.subTotal);
+            $('.no-of-items').html(ecom.totalQuantity + ' ' + "ITEMS");
+            $('#sub-total').html('$' + ' ' + ecom.subTotal);
             ecom.discountLogic();
         })
     }
     ecom.ecomlist();
 
-    ecom.discountLogic = function() {
+    ecom.discountLogic = function () {
         console.log(ecom.totalQuantity)
-        if(ecom.totalQuantity>7){
+        if (ecom.totalQuantity > 7) {
             ecom.checkout = ecom.subTotal * 0.75;
-        }
-        else if(ecom.totalQuantity>3 && ecom.totalQuantity<=6){
+            $('.promo-applied').html('JF25 APPLIED')
+            $('.promo-value').html('-$' + ' ' + (ecom.subTotal * 0.25))
+        } else if (ecom.totalQuantity > 3 && ecom.totalQuantity <= 6) {
             ecom.checkout = ecom.subTotal * 0.9;
-        }
-        else if(ecom.totalQuantity === 3){
+            $('.promo-applied').html('JF10 APPLIED')
+            $('.promo-value').html('-$' + ' ' + (ecom.subTotal * 0.1))
+        } else if (ecom.totalQuantity === 3) {
             ecom.checkout = ecom.subTotal * 0.95;
-        }
-        else{
+            $('.promo-applied').html('JF05 APPLIED')
+            $('.promo-value').html('-$' + ' ' + (ecom.subTotal * 0.05))
+        } else {
             ecom.checkout = ecom.subTotal * 1;
         }
-        $('.est-total').html('$' + ' ' + ecom.checkout);          
+        $('.est-total').html('$' + ' ' + ecom.checkout);
     }
 })(ecom);
